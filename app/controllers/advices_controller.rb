@@ -1,5 +1,5 @@
 class AdvicesController < ApplicationController
   def index
-    @advices = Advice.all.limit(10)
+    @advices = Advice.all.limit(100)
   end
 end

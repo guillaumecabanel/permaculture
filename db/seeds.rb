@@ -56,7 +56,7 @@ CSV.foreach(file_path, csv_options) do |row|
     garden_category: set_garden_category(row['garden_category']),
   )
 
-  # advice.action = action_for(advice.content)
+  advice.action = action_for(advice.content)
   advice.save
 
   print '.'
