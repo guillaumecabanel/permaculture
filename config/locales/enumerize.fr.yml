@@ -1,0 +1,17 @@
+---
+fr:
+  enumerize:
+    advice:
+      action:
+        compost:     Composter
+        harvest:     Récolter
+        maintenance: Maintenir
+        other:       Général
+        plant:       Planter
+        seed:        Semer
+        trim:        Couper
+        watering:    Arroser
+      garden_category:
+        orchard:           Au verger
+        ornamental_garden: Au jardin d’ornement
+        vegetable_garden:  Au potager

@@ -3,23 +3,40 @@ require 'csv'
 ACTIONS = [
   { pattern: "Semez",      title: "seed" },
   { pattern: "Plantez",    title: "plant" },
-  { pattern: "Binez",      title: "maintenance" },
-  { pattern: "Buttez",     title: "maintenance" },
-  { pattern: "Couvrez",    title: "maintenance" },
-  { pattern: "Débuttez ",  title: "maintenance" },
-  { pattern: "Désherber",  title: "maintenance" },
-  { pattern: "désherber",  title: "maintenance" },
-  { pattern: "Installez",  title: "maintenance" },
-  { pattern: "Nettoyez",   title: "maintenance" },
-  { pattern: "Paillez",    title: "maintenance" },
-  { pattern: "Protéger",   title: "maintenance" },
-  { pattern: "Protégez",   title: "maintenance" },
-  { pattern: "Travaillez", title: "maintenance" },
+  { pattern: "Secouez", title: "maintenance" },
+  { pattern: "secouez", title: "maintenance" },
   { pattern: "Taillez",    title: "trim" },
   { pattern: "Arrosez",    title: "watering" },
   { pattern: "Récoltez",   title: "harvest" },
   { pattern: "compost",    title: "compost" },
 ]
+
+MAINTENANCE = %w(
+  Binez
+  Buttez
+  Broyez
+  Couvrez
+  Coupez
+  Débuttez
+  Désherber
+  désherber
+  Installez
+  Nettoyez
+  Paillez
+  Protéger
+  Protéger
+  Protégez
+  Travaillez
+  Secouez
+  secouez
+  Posez
+  Stratifiez
+  Éliminez
+  Supprimez
+  supprimez
+  Griffez
+  Triez
+)
 
 def set_garden_category(text)
   case text.strip
@@ -33,6 +50,12 @@ def action_for(content)
   ACTIONS.each do |action|
     if content.match(/#{action[:pattern]}/)
        return action[:title]
+    end
+  end
+
+  MAINTENANCE.each do |action|
+    if content.match(/#{action}/)
+       return 'maintenance'
     end
   end
 

@@ -13,6 +13,7 @@ gem 'redis', '~> 4.0'
 gem 'slim-rails'
 gem 'stimulus_reflex'
 gem 'simple_form'
+gem 'enumerize'
 
 gem "view_component"
 
